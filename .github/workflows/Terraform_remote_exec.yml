@@ -39,12 +39,8 @@ jobs:
         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
       run: terraform plan -input=false
       
-     #### This Terraform apply will create vpc,ec2 instance 
-     
-    - name: Terraform apply
+    - name: Create private key file
       env:
-        AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-        AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         PRIVATE_KEY: ${{ secrets.AWS_PRIVATE_KEY  }}
       run: |
  
@@ -52,4 +48,14 @@ jobs:
        echo "Listing all file in curent directory:"
        pwd
        ls -ltr
+
+      
+     #### This Terraform apply will create vpc,ec2 instance 
+     
+    - name: Terraform apply
+      env:
+        AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        
+      run: |
        terraform apply -auto-approve -input=false
