@@ -21,7 +21,7 @@ resource "null_resource" "do_nothing" {
       "touch hello.txt",
       "echo helloworld remote provisioner > hello.txt",
       "echo hello Rashmi >> hello.txt",
-      "sh install_docker.sh >> output_install_docker.txt"
+      "sh /tmp/install_docker.sh >> output_install_docker.txt"
     ]
   }
 }
