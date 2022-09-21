@@ -1,4 +1,4 @@
-/*
+
 resource "null_resource" "do_nothing" {
   count = 1
 
@@ -6,7 +6,7 @@ resource "null_resource" "do_nothing" {
     type="ssh"
     user = "ubuntu"
     host="54.91.187.112"
-    private_key=file("/home/ubuntu/private_key")
+    private_key=file("/home/runner/work/ec2_terraform_config_remote_exec/ec2_terraform_config_remote_exec/private_key")
     agent = true
     timeout = "4m"
   }
@@ -18,4 +18,4 @@ resource "null_resource" "do_nothing" {
     ]
   }
 }
-*/
+
