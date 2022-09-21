@@ -48,7 +48,7 @@ jobs:
         PRIVATE_KEY: ${{ secrets.AWS_PRIVATE_KEY  }}
       run: |
  
-       echo "$PRIVATE_KEY" > private_key && chmod 600 private_key
+       echo "$PRIVATE_KEY" > prv_key.ppk && chmod 600 prv_key.ppk
        echo "Listing all file in curent directory:"
        pwd
        ls -ltr
