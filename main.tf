@@ -1,5 +1,6 @@
+/*
 resource "null_resource" "do_nothing" {
-  count = 3
+  count = 1
 
   connection {
     type="ssh"
@@ -17,3 +18,4 @@ resource "null_resource" "do_nothing" {
     ]
   }
 }
+*/
