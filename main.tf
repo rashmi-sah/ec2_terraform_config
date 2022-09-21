@@ -12,8 +12,8 @@ resource "null_resource" "do_nothing" {
   }
 
   provisioner "file" {
-    source      = "/home/runner/work/ec2_terraform_config_remote_exec/ec2_terraform_config_remote_exec/install_docker.sh"
-    destination = "/tmp/install_docker.sh"
+    source      = "/home/runner/work/ec2_terraform_config_remote_exec/ec2_terraform_config_remote_exec/install_python.sh"
+    destination = "/tmp/install_python.sh"
   }
   
   provisioner "remote-exec" {
@@ -21,7 +21,7 @@ resource "null_resource" "do_nothing" {
       "touch hello.txt",
       "echo helloworld remote provisioner > hello.txt",
       "echo hello Rashmi >> hello.txt",
-      "sh /tmp/install_docker.sh >> /tmp/output_install_docker.txt"
+      "sh /tmp/install_python.sh >> /tmp/output_install_python.txt"
     ]
   }
 }
