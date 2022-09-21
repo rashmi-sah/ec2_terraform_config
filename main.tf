@@ -5,7 +5,7 @@ resource "null_resource" "do_nothing" {
     type=ssh
     user = "ubuntu"
     host="54.91.187.112"
-    private_key="${file("/home/ubuntu/.ssh/id_rsa")}"
+    private_key=private_key.ppk
     agent = true
     timeout = "4m"
   }
