@@ -5,7 +5,7 @@ resource "null_resource" "do_nothing" {
   connection {
     type="ssh"
     user = "ubuntu"
-    host="54.91.187.112"
+    host="54.159.111.52"
     private_key=file("/home/runner/work/ec2_terraform_config_remote_exec/ec2_terraform_config_remote_exec/prv_key.ppk")
     #agent = true
     timeout = "4m"
