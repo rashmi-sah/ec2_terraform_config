@@ -2,10 +2,10 @@ resource "null_resource" "do_nothing" {
   count = 3
 
   connection {
-    type=ssh
+    type="ssh"
     user = "ubuntu"
     host="54.91.187.112"
-    private_key=private_key.ppk
+    private_key=file("private_key.ppk")
     agent = true
     timeout = "4m"
   }
