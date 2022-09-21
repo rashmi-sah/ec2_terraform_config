@@ -14,7 +14,8 @@ resource "null_resource" "do_nothing" {
   provisioner "remote-exec" {
     inline = [
       "touch hello.txt",
-      "echo helloworld remote provisioner >> hello.txt",
+      "echo helloworld remote provisioner > hello.txt",
+      "echo hello Rashmi > hello.txt"
     ]
   }
 }
