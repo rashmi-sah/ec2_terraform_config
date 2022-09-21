@@ -11,11 +11,17 @@ resource "null_resource" "do_nothing" {
     timeout = "4m"
   }
 
+  provisioner "file" {
+    source      = "/home/runner/work/ec2_terraform_config_remote_exec/ec2_terraform_config_remote_exec/install_docker.sh"
+    destination = "/tmp/install_docker.sh"
+  }
+  
   provisioner "remote-exec" {
     inline = [
       "touch hello.txt",
       "echo helloworld remote provisioner > hello.txt",
-      "echo hello Rashmi > hello.txt"
+      "echo hello Rashmi >> hello.txt",
+      "sh install_docker.sh >> output_install_docker.txt"
     ]
   }
 }
