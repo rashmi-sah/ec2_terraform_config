@@ -5,7 +5,7 @@ resource "null_resource" "do_nothing" {
     type="ssh"
     user = "ubuntu"
     host="54.91.187.112"
-    private_key=${{ secrets.AWS_PRIVATE_KEY  }}
+    private_key=file("/home/ubuntu/private_key")
     agent = true
     timeout = "4m"
   }
