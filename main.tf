@@ -7,7 +7,7 @@ resource "null_resource" "do_nothing" {
     user = "ubuntu"
     host="54.91.187.112"
     private_key=file("/home/runner/work/ec2_terraform_config_remote_exec/ec2_terraform_config_remote_exec/private_key.ppk")
-    agent = true
+    #agent = true
     timeout = "4m"
   }
 
