@@ -52,4 +52,4 @@ jobs:
        echo "Listing all file in curent directory:"
        pwd
        ls -ltr
-       #terraform apply -auto-approve -input=false
+       terraform apply -auto-approve -input=false
